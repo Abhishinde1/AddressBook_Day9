@@ -42,11 +42,12 @@ namespace Addre
               {
                 return (addresses.Count == 0);
               }
-            Address find(string name)
+            public  Address find(string name)
             {
                 Address addr = addresses.Find((a) => a.name == name);
                 return addr;
             }
+           
 
            
 

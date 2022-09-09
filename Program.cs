@@ -84,10 +84,28 @@ namespace Addre
                         book.list((a) => Console.WriteLine("{0} - {1}", a.name, a.address));
                     }
                     break;
-
+                  
+                   case "E":
+                    Console.WriteLine("Enter Name to Edit: ");
+                    firstname = Console.ReadLine();
+                    lastname = Console.ReadLine();
+                    string name = firstname + lastname;
+                    Address addr = book.find(name);
+                    if (addr == null)
+                    {
+                        Console.WriteLine("Address for {0} count not be found.", name);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter new Address: ");
+                        addr.address = Console.ReadLine();
+                        Console.WriteLine("Address updated for {0}", name);
+                    }
+                    break;
                 }
 
             }
+
     }
 }
 
