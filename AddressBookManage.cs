@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,11 +33,23 @@ namespace Addre
             {
                 return false;
             }
+        }
+              public void list(Action<Address> action)
+              {
+                addresses.ForEach(action);
+              }
+              public bool isEmpty()
+              {
+                return (addresses.Count == 0);
+              }
             Address find(string name)
             {
                 Address addr = addresses.Find((a) => a.name == name);
                 return addr;
             }
-        }
+
+           
+
+      
     }
 }

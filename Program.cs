@@ -1,4 +1,9 @@
-﻿namespace Addre
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Addre
 {
     class AddressPrompt
     {
@@ -66,7 +71,22 @@
                             Console.WriteLine("An address is already on file for {0}.", firstname + " " + lastname);
                         }
                         break;
+
+                       case "L":
+
+                    if (book.isEmpty())
+                    {
+                        Console.WriteLine("There are no entries.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Addresses:");
+                        book.list((a) => Console.WriteLine("{0} - {1}", a.name, a.address));
+                    }
+                    break;
+
                 }
+
             }
     }
 }
