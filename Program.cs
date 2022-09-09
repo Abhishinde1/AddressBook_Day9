@@ -102,7 +102,21 @@ namespace Addre
                         Console.WriteLine("Address updated for {0}", name);
                     }
                     break;
-                }
+                    case "D":
+                    Console.WriteLine("Enter Name to Delete: ");
+                    firstname = Console.ReadLine();
+                    lastname = Console.ReadLine();
+
+                    if (book.remove(firstname, lastname))
+                    {
+                        Console.WriteLine("Address successfully removed");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Address for {0} could not be found.", firstname + " " + lastname);
+                    }
+                    break;
+            }
 
             }
 

@@ -34,7 +34,21 @@ namespace Addre
                 return false;
             }
         }
-              public void list(Action<Address> action)
+        public bool remove(string firstname, string lastName)
+        {
+            string name = firstname + lastName;
+            Address addr = find(name);
+            if (addr != null)
+            {
+                addresses.Remove(addr);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public void list(Action<Address> action)
               {
                 addresses.ForEach(action);
               }
